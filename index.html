@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <ul>
+            <li v-for="(value, key) in movies" v-bind:class="{active: currentIndex === key}" v-on:click="switchMovie(key)">{{value}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+
+<script src="./vue.js"></script>
+
+<script>
+    // 我们的数据对象
+    var data = {
+        isUser: true,
+        counter: 0,
+        movies: ["one", "two", "three"],
+        currentIndex: 0,
+        info: {
+            name: "why",
+            age: 18,
+            height: 1.88,
+        },
+    }
+
+    // 该对象被加入到一个 Vue 实例中
+    const vm = new Vue({
+            el: "#app",
+            data: data,
+            methods: {
+                divcrement() {
+                    console.log("divcrement");
+
+                },
+                switchMovie(index) {
+                    this.currentIndex = index;
+                },
+            }
+        })
+        // 1、获取button对象
+
+    // 2、添加监听事件
+
+    // html 是 dom
+    // vue实例是 viewModel
+    // model 是定义的 obj
+</script>
