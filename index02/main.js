@@ -46,12 +46,15 @@ const vm = new Vue({
     },
     computed: {
         totalPrice() {
-            let price = 0;
-            for (let i = 0; i < this.books.length; i++) {
-                price += this.books[i].price;
-            }
+            return this.books.reduce((preValue, book) => {
+                return preValue + book.price * book.count;
+            }, 0);
 
-            return price;
+            // let totalPrice = 0;
+            // for (let i = 0; i < this.books.length; i++) {
+            //     totalPrice += this.books[i].price * this.books[i].count;
+            // }
+            // return totalPrice;
         }
     }
 })
