@@ -1,24 +1,25 @@
-let child = Vue.extend({
-    template: `
-        <h2> this is test02 </h2>
-    `,
-})
+let child = {
+    template: "#child",
+    props: ['child_count'],
+    data() {
+        return {}
+    }
+}
 let btn = {
-    template: `
-        <div> 
-            <p>this is test</p>
-            <child></child>
-        </div>
-        
-    `,
+    template: "#cpn",
     components: {
         child: child,
-    }
+    },
+    data() {
+        return {
+            count: '123456',
+        };
+    },
 }
 
 new Vue({
     el: '#app',
     components: {
         btn: btn,
-    }
+    },
 })
