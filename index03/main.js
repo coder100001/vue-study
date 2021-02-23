@@ -1,9 +1,24 @@
-Vue.component('button-counter', {
+let child = Vue.extend({
     template: `
-        <div>this is test</div>
-    `
+        <h2> this is test02 </h2>
+    `,
 })
+let btn = {
+    template: `
+        <div> 
+            <p>this is test</p>
+            <child></child>
+        </div>
+        
+    `,
+    components: {
+        child: child,
+    }
+}
 
 new Vue({
-    el: '#components-demo'
+    el: '#app',
+    components: {
+        btn: btn,
+    }
 })
