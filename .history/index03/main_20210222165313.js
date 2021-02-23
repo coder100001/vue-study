@@ -1,1 +1,0 @@
-const comptConstruster = Vue.extend()

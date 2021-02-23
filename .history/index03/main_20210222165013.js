@@ -1,1 +1,0 @@
-const vueComponent = Vue.extend()
