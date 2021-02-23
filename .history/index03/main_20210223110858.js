@@ -1,0 +1,20 @@
+     btn2 = {
+         template: `
+        <h2> this is test02 </h2>
+    `,
+     }
+     btn = {
+         template: `
+        <div> this is test </div>
+    `,
+         components: {
+             btn2: btn2,
+         }
+     }
+
+     new Vue({
+         el: '#components-demo',
+         components: {
+             btn: btn,
+         }
+     })

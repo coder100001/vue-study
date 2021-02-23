@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* [v-cloak] {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <test></test>
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="../vue.js"></script>
+
+<!-- <script src="main.js"></script> -->
+<script>
+    Vue.component('my-component-name', {
+            // ... 选项 ...
+        }) templete: '<p>这是一个组件</p>',
+
+        Vue.component('test', vcp);
+
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "this is test"
+        },
+    })
+</script>

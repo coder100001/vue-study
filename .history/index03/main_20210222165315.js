@@ -1,0 +1,1 @@
+const cptConstruster = Vue.extend()
