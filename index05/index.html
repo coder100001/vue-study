@@ -18,7 +18,7 @@
         <cpn></cpn>
         <cpn>
             <template slot="right" slot-scope="right">
-                <span v-for="item in right.planguages">{{item}} - </span>
+                <span>{{right.planguages.join(' * ')}} </span>
             </template>
         </cpn>
         <cpn></cpn>
