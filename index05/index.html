@@ -21,7 +21,11 @@
                 <span>{{right.planguages.join(' * ')}} </span>
             </template>
         </cpn>
-        <cpn></cpn>
+        <cpn>
+            <template slot="right" slot-scope="right">
+                <span>{{right.planguages.join(' - ')}} </span>
+            </template>
+        </cpn>
     </div>
 
 </body>
