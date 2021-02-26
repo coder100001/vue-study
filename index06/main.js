@@ -13,5 +13,6 @@ obj.flag = flag;
 obj.sum = sum(10, 20);
 
 export {
-    obj
+    obj,
+    name,
 }
