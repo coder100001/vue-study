@@ -1,7 +1,7 @@
-const { add } = require('./mathUtils.js');
+const { add } = require('./js/mathUtils');
 console.log(add(100, 200));
 
-import { name, age } from "./info";
+import { name, age } from "./js/info";
 
 
 
