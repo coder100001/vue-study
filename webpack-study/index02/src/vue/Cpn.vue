@@ -1,22 +1,18 @@
 <template id="app">
      <div>
-        <h2>{{message}}</h2>
-        <button @click="btnClick(message)">{{name}}</button>
-        <Cpn></Cpn>
+        <h2>我是cpn展示组件</h2>
+        <p>我是cpn组件内容</p>
     </div>
 </template>
 
 
 <script>
-
-import Cpn from "./Cpn";
-
 export default {
     template: "#app",
     data() {
         return {
-            message: "this is test",
-            name: "按钮",
+            title: "this is test",
+            content: "this is content",
         }
     },
     methods: {
@@ -25,9 +21,6 @@ export default {
 
         }
     },
-    components: {
-        Cpn:Cpn,
-    }
 }
 </script>
 

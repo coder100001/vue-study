@@ -13,7 +13,7 @@ import { less } from "./css/special.less";
 
 import Vue from 'vue';
 
-import App from './vue/App.vue';
+import App from './vue/App';
 
 new Vue({
     el: "#app",
