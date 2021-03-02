@@ -40,6 +40,18 @@
                      },
                  }, ],
              },
+
+             // npm install--save - dev babel - loader @7 .1 .5 babel - core @6 .26 .3 babel - preset - es2015 @6 .24 .1
+             {
+                 test: /\.js$/,
+                 exclude: /(node_modules|bower_components)/,
+                 use: {
+                     loader: 'babel-loader',
+                     options: {
+                         presets: ['es2015']
+                     }
+                 }
+             }
          ],
      },
  };
