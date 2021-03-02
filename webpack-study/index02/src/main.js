@@ -13,14 +13,12 @@ import { less } from "./css/special.less";
 
 import Vue from 'vue';
 
+import App from './vue/App.vue';
+
 new Vue({
     el: "#app",
-    data: {
-        message: "this is test"
-    },
-    template: `
-    <div>
-        <h2>{{message}}</h2>
-    </div>
-    `,
+    template: `<App></App>`,
+    components: {
+        App: App,
+    }
 })
