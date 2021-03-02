@@ -9,4 +9,4 @@ console.log(name);
 console.log(age);
 
 import { body } from "./css/normal.css";
-console.log(body); // {String}
+import { less } from "./css/special.less";
