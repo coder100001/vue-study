@@ -1,5 +1,6 @@
  const path = require('path');
  const VueLoaderPlugin = require('vue-loader/lib/plugin')
+ const htmlWebpackPlugin = require("html-webpack-plugin");
 
  module.exports = {
      entry: "./src/main.js",
@@ -69,6 +70,9 @@
 
      plugins: [
          // 请确保引入这个插件！
-         new VueLoaderPlugin()
+         new VueLoaderPlugin(),
+         new htmlWebpackPlugin({
+             template: "index.html",
+         })
      ]
  };
