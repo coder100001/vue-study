@@ -1,0 +1,10 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const baseConfig = require('./base.config');
+
+module.exports = webpackMerge(baseConfig, {
+    plugins: [
+        // 请确保引入这个插件！
+        new UglifyJsPlugin()
+    ],
+});

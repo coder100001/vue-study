@@ -1,6 +1,10 @@
  const path = require('path');
  const VueLoaderPlugin = require('vue-loader/lib/plugin')
- const htmlWebpackPlugin = require("html-webpack-plugin");
+ const HtmlWebpackPlugin = require("html-webpack-plugin");
+ // npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
+ //  const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+ // npm install webpack-dev-server@2.9.3 --save-dev
+ // ./node_modules/.bin/webpack-dev-server || npm run dev
 
  module.exports = {
      entry: "./src/main.js",
@@ -71,8 +75,8 @@
      plugins: [
          // 请确保引入这个插件！
          new VueLoaderPlugin(),
-         new htmlWebpackPlugin({
+         new HtmlWebpackPlugin({
              template: "index.html",
-         })
-     ]
+         }),
+     ],
  };
