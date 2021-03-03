@@ -1,0 +1,8 @@
+body {
+    background: url("../img/test.jpeg");
+    display: none;
+}
+
+[v-cloak] {
+    display: none;
+}

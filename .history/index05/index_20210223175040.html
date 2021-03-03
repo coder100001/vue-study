@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* [v-cloak] {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <btn></btn>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<template id="cpn">
+    <div> 
+        <h2>parent {{count}}</h2>
+        <child v-bind:child-count="count" v-bind:child-categories="categories" v-on:itemclick="postCategory"></child>
+    </div>
+</template>
+
+
+<template id="child">
+    <div>
+        <button v-for="category in childCategories" v-on:click="btnClick(category)">{{category.name}}</button>
+    </div>
+</template>
+
+<script src="../vue.js"></script>
+
+<script>
+    let child = {
+        template: "#child",
+        props: {
+            childCount: {
+                type: String,
+                default: '101',
+                required: true,
+            },
+            childCategories: {
+                type: Array,
+                default: function() {
+                    return [];
+                },
+                required: true,
+            }
+        },
+        data() {
+            return {}
+        },
+        methods: {
+            btnClick: function(category) {
+                // send event
+                this.$emit("itemclick", category)
+                console.log(category.name)
+            }
+        }
+    }
+    let btn = {
+        template: "#cpn",
+        components: {
+            child: child,
+        },
+        data() {
+            return {
+                count: '123456',
+                categories: [{
+                    id: 1,
+                    name: "iphone12",
+                }, {
+                    id: 2,
+                    name: "huawei",
+                }, {
+                    id: 3,
+                    name: "xiaomi",
+                }, ],
+            };
+        },
+        methods: {
+            postCategory: function(category) {
+                // 监听事件
+                console.log(category)
+            }
+        }
+    }
+
+    new Vue({
+        el: '#app',
+        components: {
+            btn: btn,
+        },
+    })
+</script>

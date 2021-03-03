@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* [v-cloak] {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn>
+
+            <ul slot="left">
+                <li>列表</li>
+            </ul>
+            <ol>
+                <li>this is test</li>
+            </ol>
+        </cpn>
+        <cpn></cpn>
+    </div>
+
+</body>
+
+</html>
+
+<template id="cpn">
+    <div>
+        <slot name="left">this is component</slot>
+        <slot name="center">this is test</slot>
+        <slot name="right">
+            <ul>
+                <li v-for=></li>
+            </ul>
+        </slot>
+    </div>
+</template>
+
+<script src="../vue.js"></script>
+
+<script>
+    // 插槽（slot）使用
+    new Vue({
+        el: '#app',
+        data: {
+            message: " hello world～",
+        },
+        components: {
+            cpn: {
+                template: "#cpn",
+                data: function() {
+                    return {
+                        pLanguages: ["go", "c++", "java", "javascript"]
+                    }
+                }
+            },
+        }
+    })
+</script>

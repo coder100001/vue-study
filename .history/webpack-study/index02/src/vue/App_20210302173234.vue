@@ -1,0 +1,29 @@
+<template id="app">
+     <div>
+        <h2>{{message}}</h2>
+        <button @click="btnClick(message)">{{name}}</button>
+    </div>
+</template>
+
+
+<script>
+export default {
+    template: "#app",
+    data() {
+        return {
+            message: "this is test",
+            name: "按钮",
+        }
+    },
+    methods: {
+        btnClick: function(params) {
+            console.log(params);
+
+        }
+    },
+}
+</script>
+
+<style scoped>
+
+</style>
