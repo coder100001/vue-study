@@ -1,13 +1,13 @@
 <template>
-
+    <div>{{$sotre.state.counter}}</div>
 </template>
 
 <script>
 
 export default {
-    name: 'MainTabBar',
-    components: {
-    
+    name: 'VueXStudy',
+    props:{
+        // counter: Number
     }
 }
 </script>
