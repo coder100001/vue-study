@@ -34,4 +34,9 @@ const router = new Router({
   ]
 })
 
+const originalReplace = Router.prototype.replace;
+Router.prototype.replace = function replace(location) {
+    return originalReplace.call(this, location).catch(err => err);
+};
+
 export default router
