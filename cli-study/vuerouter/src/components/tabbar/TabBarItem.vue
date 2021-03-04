@@ -20,13 +20,12 @@ export default {
         isActive: false,
       }
     },
-    actived() {
-      this.isActive = true
+    props: {
+      path: String
     },
     methods: {
       itemClick() {
-        console.log('item');
-        
+        this.$router.replace(this.path)
       }
     }
 }
