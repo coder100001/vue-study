@@ -1,15 +1,6 @@
 <template>
     <div id="tab-bar">
-        <div class="tab-bar-item">
-            <img src="../../assets/img/tabBar/WechatIMG19.png" alt="">
-            <div>首页</div>
-        </div>
-        <div class="tab-bar-item">
-            <img src="../../assets/img/tabBar/WechatIMG19.png" alt="">
-            <div>分类</div>
-        </div>
-        <div class="tab-bar-item">购物车</div>
-        <div class="tab-bar-item">我的</div>
+        <slot></slot>
     </div>
 </template>
 
@@ -27,18 +18,5 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
-  }
-
-  .tab-bar-item {
-      flex: 1;
-      text-align: center;
-      height: 49px;
-      box-shadow: 0 -3px 1px rgba(100, 100, 100, 0.1);
-  }
-
-  .tab-bar-item img {
-      text-align: center;
-      height: 20px;
-      width: 30px;
   }
 </style>
