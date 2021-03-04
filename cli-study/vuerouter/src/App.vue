@@ -12,6 +12,9 @@ export default {
   name: 'App',
   components: {
     MainTabBar,
+  },
+  data: {
+    message: 'this is message'
   }
 }
 </script>
