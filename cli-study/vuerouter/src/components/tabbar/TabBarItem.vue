@@ -1,13 +1,34 @@
 <template>
-  <div class="tab-bar-item">
+  <div class="tab-bar-item" @click="itemClick">
+    <div v-if="!isActive">
       <slot name="item-icon"></slot>
-      <slot name="item-text"></slot>
+    </div>
+    <div v-else>
+      <slot name="item-icon-actived"></slot>
+    </div>
+    <div v-bind:class="{active:isActive}">
+        <slot name="item-text"></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
     name:"TabBar",
+    data() {
+      return {
+        isActive: false,
+      }
+    },
+    actived() {
+      this.isActive = true
+    },
+    methods: {
+      itemClick() {
+        console.log('item');
+        
+      }
+    }
 }
 </script>
 
@@ -26,6 +47,10 @@ export default {
       height: 20px;
       width: 30px;
       vertical-align: middle;
-      margin-bottom: 2px;
+      margin-top: 2px;
+  }
+
+  .active {
+    color: pink;
   }
 </style>
