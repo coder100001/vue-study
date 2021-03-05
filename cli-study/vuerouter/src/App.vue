@@ -4,8 +4,11 @@
     <main-tab-bar></main-tab-bar>
     <div>{{message}}</div>
     <vue-x-study>{{$store.state.counter}}</vue-x-study>
+    <h2>{{$store.getters.powerCounter}}</h2>
     <button @click="addition">+</button>
     <button @click="subtraction">-</button>
+
+    <p>{{$store.getters.getStudentNums}}</p>
   </div>
 </template>
 
