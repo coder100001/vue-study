@@ -1,5 +1,5 @@
 <template>
-    <div>{{$sotre.state.counter}}</div>
+    <div>{{ $store.state.counter }}</div>
 </template>
 
 <script>
