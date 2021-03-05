@@ -3,9 +3,9 @@
     <router-view></router-view>
     <main-tab-bar></main-tab-bar>
     <div>{{message}}</div>
-    <vue-x-study :counter="counter"></vue-x-study>
-    <button @click="counter++">+</button>
-    <button @click="counter--">-</button>
+    <vue-x-study>{{$store.state.counter}}</vue-x-study>
+    <button @click="addition">+</button>
+    <button @click="subtraction">-</button>
   </div>
 </template>
 
@@ -25,6 +25,14 @@ export default {
       counter: 0,
     };
   },
+  methods:{
+    addition() {
+      this.$store.commit('increment')
+    },
+    subtraction() {
+      this.$store.commit('decrement')
+    }
+  }
 };
 </script>
 

@@ -7,7 +7,14 @@ const vuexx = new Vuex.Store({
     state: {
         counter: 1000,
     },
-    mutations: {},
+    mutations: {
+        increment(state) {
+            state.counter++
+        },
+        decrement(state) {
+            state.counter--
+        }
+    },
     actions: {},
     getters: {},
     modules: {},
