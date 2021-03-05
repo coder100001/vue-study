@@ -34,7 +34,8 @@ const router = new Router({
             path: "/profile",
             component: Profile,
         },
-    ]
+    ],
+    mode: "hash",
 })
 
 const originalReplace = Router.prototype.replace;
