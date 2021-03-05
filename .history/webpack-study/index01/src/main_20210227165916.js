@@ -1,1 +1,0 @@
-const { add } = { required: true, message: '请输入', trigger: 'blur' }
