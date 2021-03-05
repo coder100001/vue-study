@@ -43,6 +43,13 @@ const vuexx = new Vuex.Store({
         },
         getStudentNums(state, getters) {
             return getters.getStudentConditions.length
+        },
+        mergeAgeStudent(state) {
+            return age => {
+                return state.students.filter(student => {
+                    return student.age > age
+                })
+            }
         }
     },
     modules: {},

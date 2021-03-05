@@ -8,34 +8,42 @@
     <button @click="addition">+</button>
     <button @click="subtraction">-</button>
 
-    <p>{{$store.getters.getStudentNums}}</p>
+    <p>{{$store.getters.mergeAgeStudent(20)}}</p>
   </div>
 </template>
 
 <script>
-import MainTabBar from "@/components/MainTabBar";
+import MainTabBar from "@/components/MainTabBar"
 import VueXStudy from '@/components/VueXStudy'
+import request from '@/network/request'
 
 export default {
-  name: "App",
-  components: {
-    MainTabBar,
-    VueXStudy,
-  },
-  data: function() {
-    return {
-      message: "this is message",
-      counter: 0,
-    };
-  },
-  methods:{
-    addition() {
-      this.$store.commit('increment')
+    name: "App",
+    components: {
+        MainTabBar,
+        VueXStudy,
     },
-    subtraction() {
-      this.$store.commit('decrement')
-    }
-  }
+    data: function() {
+        return {
+            message: {},
+            counter: 0,
+        };
+    },
+    methods:{
+        addition() {
+            this.$store.commit('increment')
+        },
+        subtraction() {
+            this.$store.commit('decrement')
+        }
+    },
+    created: function () {
+        request({
+            url:'/utest/preview/queryMidList?desc={"status":2,"isNewUser":1,"expireStatus":0}',
+        }).then((res) => {
+            this.message = res.data.data.midList.join('-')
+        })
+    },
 };
 </script>
 
