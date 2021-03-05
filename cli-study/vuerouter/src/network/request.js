@@ -6,5 +6,20 @@ export default function(config) {
         timeout: 50000,
     })
 
+    instance.interceptors.request.use(config => {
+        console.log(config);
+        return config
+    }, err => {
+        console.log(err);
+        return err
+    })
+
+    instance.interceptors.response.use(res => {
+        return res.data
+    }, err => {
+        console.log(err);
+        return err
+    })
+
     return instance(config)
 }

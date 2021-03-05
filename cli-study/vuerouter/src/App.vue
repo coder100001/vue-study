@@ -41,7 +41,7 @@ export default {
         request({
             url:'/utest/preview/queryMidList?desc={"status":2,"isNewUser":1,"expireStatus":0}',
         }).then((res) => {
-            this.message = res.data.data.midList.join('-')
+            this.message = res.data.midList.join('-')
         })
     },
 };
